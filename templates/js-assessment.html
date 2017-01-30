@@ -273,6 +273,11 @@
 
 <script>
   "use strict";
+  function clickAttack(evt) {
+    evt.preventDefault();
+  $.post("/t-rex-attack.json", {"victim-name" : $("#victim-name").val()}, showTRexResults);
+}
+  $("#t-rex-form").on("submit", clickAttack);
 
   // NOTE: DO NOT CHANGE THE CODE OF THIS FUNCTION
   function showTRexResults(results) {
